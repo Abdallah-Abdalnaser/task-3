@@ -1,0 +1,36 @@
+:root {
+    --blue1: #163172;
+}
+
+form::before {
+    width: 0px;
+    height: 0px;
+}
+
+.name {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px 25px;
+}
+
+.name .form-group {
+    padding: 0px 5px;
+    width: 100%;
+}
+
+.login {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.login p {
+    margin: 0px;
+    color: var(--blue1);
+    padding-bottom: 2rem;
+}
+
+.login p a {
+    color: var(--blue1);
+}
