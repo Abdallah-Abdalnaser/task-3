@@ -25,4 +25,14 @@ export class Password {
             confirmPassword.setAttribute('type','password');
         }
     }
+
+    checkIfPasswordIsCorrect() {
+        if (JSON.parse(localStorage.getItem('user')).password  === password.value) {
+            window.location.href='../home.html';
+            wrongPassword.style.display='none'
+        }else {
+            wrongPassword.style.display='block'
+            wrongPassword.innerText='*Wrong Password'
+        }
+    }
 }

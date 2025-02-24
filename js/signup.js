@@ -41,7 +41,7 @@ register.addEventListener('click',function() {
         password: password.value
     }
     LS.saveDataInLocalStorage(data);
-    window.location.href='../login.html';
+    window.location.href='../index.html';
 })
 
 

@@ -23,29 +23,30 @@
         </div>
         <div class="form-group">
             <label for="Email address" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="Email address" aria-describedby="emailHelp" name="email" required email #email="ngModel">
-            <p>*Invalid Email</p>
+            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email" required>
+            <p id="emailrequired">*Invalid Email</p>
         </div>
         <div class="form-group">
             <div class="passlabel">
                 <label for="password" class="form-label">Password</label>
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye" id="iconeyepassword"></i>
                 <!-- <i class="fa-solid fa-eye-slash"></i> -->
             </div>
-            <input class="form-control" id="password" aria-describedby="emailHelp"name="password" required>
-            <p>*Invalid Password</p>
+            <input type="password" class="form-control" id="password" aria-describedby="emailHelp"name="password" required>
+            <p id="wrongPassword">*Invalid Password</p>
         </div>
         <div class="forget">
             <a href="#">I forget my password</a>
         </div>
         <br>
         <div class="create">
-            <button type="submit">Log in</button>
+            <button type="button" id="btn" >Log in</button>
         </div>
         <div class="newaccount">
             <p>Don't have an account?</p>
             <button type="button"><a href="./signup.html">Create an account</a></button>
         </div>
     </form>
+    <script src="./js/login.js" type="module"></script>
 </body>
 </html>

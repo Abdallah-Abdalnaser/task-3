@@ -26,6 +26,7 @@ export class Localstorage {
         } else {
             for (let i = 0; i < allUsers.length; i++) {
                 if (allUsers[i].email === email) {
+                    window.localStorage.setItem('user',JSON.stringify(allUsers[i]))
                     return true;
                 } else {
                     return false;
