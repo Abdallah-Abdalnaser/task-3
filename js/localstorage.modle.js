@@ -20,18 +20,19 @@ export class Localstorage {
     searchEmailExists(email) {
         // debugger;
         let allUsers = this.getDataInLocalStorage();
+        
         // Check if the data is already in the local storage
         if (window.localStorage.getItem("users") === null) {
             return false;
         } else {
             for (let i = 0; i < allUsers.length; i++) {
                 if (allUsers[i].email === email) {
+                    console.log(allUsers[i].email);
                     window.localStorage.setItem('user',JSON.stringify(allUsers[i]))
                     return true;
-                } else {
-                    return false;
                 }
             }
+            return false;
         }
     }
 }

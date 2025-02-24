@@ -20,6 +20,7 @@ iconeyepassword.addEventListener('click',pass.showPassword)
 // Login button
 login.disabled=true;
 login.addEventListener('click',function() {
+    // debugger;
     if (LS.searchEmailExists(email.value)) {
         emailrequired.style.display = 'none';
         pass.checkIfPasswordIsCorrect();

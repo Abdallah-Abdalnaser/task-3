@@ -17,6 +17,12 @@ section {
     box-shadow: 0px 0px 10px #ccc;
 }
 
+@media (max-width: 643px) {
+    section {
+        width: 90%;
+    }
+}
+
 section h1 {
     color: cornflowerblue;
     text-align: center;
