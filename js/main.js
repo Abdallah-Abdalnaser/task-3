@@ -1,66 +1,53 @@
-import { Localstorage} from './localstorage.module.js';
-let LS = new Localstorage();
-let register = document.getElementById('btn');
+import { Localstorage} from './localstorage.modle.js';
+import { Validator  } from './validator.modle.js';
+import { Password } from './password.model.js';
 
+// instance from class 
+let LS = new Localstorage();
+let validator = new Validator();
+let pass = new Password();
+
+
+// html Element
+let form = document.querySelector('form')
 let firstName = document.getElementById('firstname');
 let lastName = document.getElementById('lastname');
 let email = document.getElementById('Email');
 let password = document.getElementById('password');
 let confirmPassword = document.getElementById('confirmPassword');
+let register = document.getElementById('btn');
+let iconeyepassword = document.getElementById('iconeyepassword');
+let iconeyeconfirmpassword = document.getElementById('iconeyeconfirmpassword');
 
 
-let passwordrequired = document.getElementById('passwordrequired');
-let ConfermpasswordReauired = document.getElementById('ConfermpasswordReauired');
+// Event Listeners for input fields
+firstName.addEventListener('blur', validator.firstNameValidator);
+lastName.addEventListener('blur', validator.lastNameValidator)
+email.addEventListener('blur', validator.emailValidator);
+password.addEventListener('blur', validator.passwordValidator);
+confirmPassword.addEventListener('blur', validator.confirmPasswordValidator);
+
+//show or hidden password
+iconeyepassword.addEventListener('click',pass.showPassword)
+iconeyeconfirmpassword.addEventListener('click',pass.showConfirmPassword)
 
 
-firstName.addEventListener('blur', function() {
-    let firstnamerequired = document.getElementById('firstnamerequired');
-    if(firstName.value === ''){
-        firstnamerequired.style.display = 'block';
-    } else {
-        firstnamerequired.style.display = 'none';
-    }
-})
-
-lastName.addEventListener('blur', function() {
-    let lastnamerequired = document.getElementById('lastnamerequired');
-    if(lastName.value === ''){
-        lastnamerequired.style.display = 'block';
-    } else {
-        lastnamerequired.style.display = 'none';
-    }
-})
-
-email.addEventListener('blur', function() {
-    let emailrequired = document.getElementById('emailrequired');
-    if(email.value === ''){
-        emailrequired.style.display = 'block';
-    } else {
-        emailrequired.style.display = 'none';
-    }
-})
-
-
-
-
-
+// register Event
 register.addEventListener('click',function() {
-    let firstNameValue = document.getElementById('firstname').value;
-    let lastNameValue = document.getElementById('lastname').value;
-    let emailValue = document.getElementById('Email').value;
-    let passwordValue = document.getElementById('password').value;
-
     let data = {
-        firstName: firstNameValue,
-        lastName: lastNameValue,
-        email: emailValue,
-        password: passwordValue
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+        password: password.value
     }
-
-    if (LS.searchEmailExists(email)) {
-        console.log("Email already exists");
-    } else {
-        LS.saveDataInLocalStorage(data);
-    }
+    LS.saveDataInLocalStorage(data);
+    window.location.href='../login.html';
 })
 
+
+// check Register button
+register.disabled=true;
+form.addEventListener("input", function() {
+    let validator = new Validator();
+    validator.checkRegisterButton();
+});

@@ -25,23 +25,23 @@
             <div class="form-group">
                 <label for="firstname" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstname"  required name="firstname"/>
-                <p id="firstnamerequired">*Required Field</p>
+                <p id="firstnamerequired"></p>
             </div>
             <div class="form-group">
                 <label for="lastname" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="lastname" required name="lastname" />
-                <p id="lastnamerequired">*Required Field</p>
+                <p id="lastnamerequired"></p>
             </div>
         </div>
         <div class="form-group">
             <label for="Email address" class="form-label">Email address</label>
             <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" required name="email"/>
-            <p id="emailrequired">*Required Field</p>
+            <p id="emailrequired"></p>
         </div>
         <div class="form-group">
             <div class="passlabel">
                 <label for="password" class="form-label">Password</label>
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye" id="iconeyepassword"></i>
                 <!-- <i class="fa-solid fa-eye-slash"></i> -->
             </div>
             <input type="password" class="form-control" id="password" ngModel required name="password"/>
@@ -50,7 +50,7 @@
         <div class="form-group">
             <div class="passlabel">
                 <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye" id="iconeyeconfirmpassword"></i>
                 <!-- <i class="fa-solid fa-eye-slash"></i> -->
             </div>
             <input type="password" class="form-control" id="confirmPassword" ngModel required name="confirmPassword"/>
